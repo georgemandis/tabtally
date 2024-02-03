@@ -2,20 +2,28 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
     <title>TabTally</title>
-<link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles.css" />
   </head>
-  <body>
-    <h1>TabTally: Open Tab Counter</h1>
-<p>
-<a href="https://github.com/georgemandis/tabtally">GitHub</a>
-</p>
+  <body>    
+    <p>
+      <a href="https://github.com/georgemandis/tabtally">View source on GitHub</a>
+    </p>    
+    <h1>TabTally: Open Tab Counter</h1>    
     <h2>1 of <span id="total"></span> total tabs</h2>
     <button onclick="openNewTab()">New Tab (same URL)</button>
     <button onclick="openNewTab(Math.random())">
       New Tab (randomized URL parameters)
     </button>
+    <p>
+      Even works on <a href="/hello.html">totally</a>
+      <a href="/hello/world/">different</a> <a href="/world.html">pages</a> (on
+      the same
+      <a href="https://developer.mozilla.org/en-US/docs/Glossary/Origin"
+        >origin</a
+      >).
+    </p>
     <h2>Tab Breakdown</h2>
     <pre id="counter"></pre>
 
@@ -39,6 +47,7 @@
       };
 
       TabTally.init(updateCounterAndTitle);
-    </script>
+    </script>    
   </body>
+</html>
 </html>
