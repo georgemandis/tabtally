@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
     <title>TabTally</title>
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/tabtally/styles.css" />
   </head>
   <body>    
     <p>
@@ -17,8 +17,8 @@
       New Tab (randomized URL parameters)
     </button>
     <p>
-      Even works on <a href="/hello.html">totally</a>
-      <a href="/hello/world/">different</a> <a href="/world.html">pages</a> (on
+      Even works on <a href="/tabtally/hello.html">totally</a>
+      <a href="/tabtally/hello/world/">different</a> <a href="/tabtally/world.html">pages</a> (on
       the same
       <a href="https://developer.mozilla.org/en-US/docs/Glossary/Origin"
         >origin</a
@@ -27,7 +27,7 @@
     <h2>Tab Breakdown</h2>
     <pre id="counter"></pre>
 
-    <script src="/tabtally.js"></script>
+    <script src="/tabtally/tabtally.js"></script>
     <script>
       const updateCounterAndTitle = () => {
         document.getElementById("counter").textContent = JSON.stringify(
