@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TabTally</title>
+  </head>
+  <body>
+    <h1>TabTally: Open Tab Counter</h1>
+    <h2>1 of <span id="total"></span> total tabs</h2>
+    <button onclick="openNewTab()">New Tab (same URL)</button>
+    <button onclick="openNewTab(Math.random())">
+      New Tab (randomized URL parameters)
+    </button>
+    <h2>Tab Breakdown</h2>
+    <pre id="counter"></pre>
+
+    <script src="tabtally.js"></script>
+    <script>
+      const updateCounterAndTitle = () => {
+        document.getElementById("counter").textContent = JSON.stringify(
+          TabTally.getTabs(),
+          null,
+          2
+        );
+
+        document.title = `1 of ${TabTally.getTotal()}`;
+        document.querySelector("#total").textContent = TabTally.getTotal();
+      };
+
+      const openNewTab = (hash) => {
+        const l = new URL(location.href);
+        if (hash) l.hash = hash;
+        window.open(l.href);
+      };
+
+      TabTally.init(updateCounterAndTitle);
+    </script>
+  </body>
+</html>
